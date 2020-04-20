@@ -1,0 +1,16 @@
+## exercise : which a web design is better than others?
+# comparison the 'time (in seconds)' between page A and page B 
+
+# setting
+getwd()
+setwd("C:/Users/yna/Downloads")
+session_times = read.csv(file="web_page_data.csv")
+
+# ggplot box plots
+install.packages('ggplot2')
+library(ggplot2)
+
+ggplot(session_times, aes(x=Page, y=Time)) +
+  geom_boxplot()
+# page B가 방문객들을 더 오래 붙잡은 것으로 나옴
+
