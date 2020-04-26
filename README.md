@@ -16,7 +16,7 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
 
 - [Practical Statistics for Data Scientists 03_2 – 통계적 실험과 유의성 검정 (2)](https://peeltheidea.space/statistics/statistics_for_ds/practical-statistics-for-data-scientists-03_2-%ed%86%b5%ea%b3%84%ec%a0%81-%ec%8b%a4%ed%97%98%ea%b3%bc-%ec%9c%a0%ec%9d%98%ec%84%b1-%ea%b2%80%ec%a0%95-2/)
 
-[CH 4. 회귀와 예측](
+[CH 4. 회귀와 예측 - ](
 
 *상세 내용 포스팅 참고*
 
