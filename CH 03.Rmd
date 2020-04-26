@@ -1,7 +1,7 @@
 ---
 title: "CH 3. 통계 실험 & 유의성 검정"
 output:
-  html_document: rmarkdown::github_document
+  html_document: default
   pdf_document: default
 editor_options:
   chunk_output_type: console
