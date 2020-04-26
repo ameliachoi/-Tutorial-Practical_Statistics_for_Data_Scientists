@@ -8,7 +8,7 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
 
 ---
 
-[CH 3. 통계 실험 & 유의성 검정](
+[CH 3. 통계 실험 & 유의성 검정](file:///C:/Users/newsY/Downloads/CH%2003.html)
 
 관련 포스팅 
 
