@@ -4,9 +4,9 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
 [해당 도서 구매 링크](https://www.hanbit.co.kr/store/books/look.php?p_code=B2845507407) <br>
 ![](https://user-images.githubusercontent.com/42733230/79707950-104a6500-82f9-11ea-8218-a23055b6c949.jpg)
 
-** R code 정리**
+**R code 정리**
 
-** 자세한 내용은 링크 참조**
+**자세한 내용은 링크 참조**
 
 
 [CH 3. 통계 실험 & 유의성 검정](
