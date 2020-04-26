@@ -1,0 +1,134 @@
+---
+title: "CH 3. 통계 실험 & 유의성 검정"
+output:
+  html_document: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+### 통계적 유의성과 p값
+
+
+통계적 유의성이란, 자신의 실험 결과가 우연히 일어난 것인지 아니면 극단적인 것인지를 판단하는 방법. 결과가 우연히 벌어질 수 있는 변동성의 바깥에 존재한다면 (우연히 일어날 확률이 낮다면) 우리는 이것을 통계적으로 유의하다고 말한다.
+
+웹 테스트 결과를 가지고 분석해보자.
+
+**전자 상거래 실험 결과**
+
+가격 A : 전환 200 / 전환되지 않음 23539 <br>
+가격 B : 전환 182 / 전환되지 않음 22406
+
+가격 A는 가격 B에 비해 약 5% 정도 우수한 결과를 보였다.
+재표본추출 절차를 사용하면 가격 A와 B 간의 전환 차이가 우연에 의한 것인지 검정할 수 있다
+
+```{r 전체 전환율 계산}
+
+perm_fun <- function(x, n1, n2)
+{
+  n <- n1 + n2
+  idx_b <- sample(1:n, n1)
+  idx_a <- sample(1:n, idx_b)
+  mean_diff <- mean(x[idx_b]) - mean(x[idx_a])
+  return(mean_diff)
+}
+
+obs_pct_diff <- 100*(200/23739 - 182/22588)
+conversion <- c(rep(0, 45945), rep(1, 382))
+perm_diffs <- rep(0, 1000)
+for(i in 1:1000)
+ perm_diffs[i] = 100*perm_fun(conversion, 23739, 22588)
+hist(perm_diffs, xlab="Conversion rate (percent)", main='')
+abline(v = obs_pct_diff, lty=2, lwd=1.5)
+text(" Observed\n difference", x=obs_pct_diff, y=par()$usr[4]-20, adj=0)
+```
+
+관찰된 0.0368%의 차이는 랜덤 변이의 범위 밖에 있다 (통계적으로 유의함)
+
+---
+
+### p 값
+
+
+p 값은 통계적 유의성을 정확히 측정하기 위한 지표가 필요함
+
+```{r p-value}
+mean(perm_diffs > obs_pct_diff)
+```
+
+p-value는 0.284이다. 즉, 우연히 얻은 결과의 약 30% 정도가 관찰한 것만큼 극단적이거나 그 이상 극단적인 결과를 얻을 것으로 기대된다.
+
+
+사실, 이 경우에는 p값을 얻기 위해 순열검정을 할 필요가 없다. 대신 정규분포를 사용하여 p값을 근사할 수도 있다.
+
+```{r prop.test}
+prop.test(x=c(200,182), n=c(23739,22588), alternative='greater')
+```
+
+인수 x는 각 그룹의 성공횟수이고, 인수 n은 시행 횟수이다. 
+
+정규근사법을 통해, 순열검정에서 얻은 p값과 비슷한 0.3498을 얻은 것을 볼 수 있다.
+
+---
+
+### t 검정
+
+
+t-test는 데이터가 수치형인 아주 일반적인 2표본 비교에 주료 사용됨
+
+```{r t-test}
+session_times <- read.csv('C:/Users/newsY/Downloads/web_page_data.csv')
+t.test(Time ~ Page, data=session_times, alternative='less')
+```
+
+대안가설은 페이지 A에 대한 평균 세션이 B보다 작다는 것이다.
+
+순열검정을 통해 얻은 값과 매우 유사하다.
+
+---
+
+### 분산분석 (ANOVA)
+
+
+여러 그룹 간의 통계적으로 유의미한 차이를 검정하는 통계적 절차
+
+```{r}
+four_sessions <- read.csv(file='C:/Users/newsY/Downloads/four_sessions.csv')
+
+library(ggplot2)
+
+ggplot(four_sessions, aes(x=Page, y=Time)) +
+  geom_boxplot()
+```
+
+한 쌍씩 비교하는 횟수가 증가할수록 우연히 일어난 일에 속을 가능성이 커진다.
+
+전체적인 총괄검정을 위해 ANOVA 실시
+
+```{r}
+library(lmPerm)
+summary(aovp(Time ~ Page, data=four_sessions))
+```
+
+Pr(Prob) 값이 바로 p값으로 결과는 0.07123
+
+---
+
+### F 통계량
+
+
+F 통계량은 잔차 오차 *residual error*로 인한 분산과 그룹 평균의 분산에 대한 비율을 기초로 한다.
+
+이 비율이 높을수록 통계적으로 유의미함
+
+```{r}
+summary(aov(Time ~ Page, data=four_sessions))
+```
+
+Df는 자유도, Sum Sq는 제곱합, Mean Sq는 평균 제곱, F value는 F 통계량 가르킴
