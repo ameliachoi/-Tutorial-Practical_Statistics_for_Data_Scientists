@@ -8,7 +8,7 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
 
 ---
 
-[CH 3. 통계 실험 & 유의성 검정 - R code](
+[CH 3. 통계 실험 & 유의성 검정 - R code](https://rpubs.com/ameliachoi/PSDS-CH03)
 
 *상세 내용 포스팅 참고*
 
@@ -22,7 +22,7 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
 
 - [Practical Statistics for Data Scientists 04 – 회귀와 예측](https://peeltheidea.space/statistics/statistics_for_ds/practical-statistics-for-data-scientists-04-%ed%9a%8c%ea%b7%80%ec%99%80-%ec%98%88%ec%b8%a1/)
 
-[CH 5. 분류](
+[CH 5. 분류 - R code](
 
 [CH 6. 통계적 머신러닝](
 
