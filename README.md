@@ -36,6 +36,18 @@ Peter Bruce, Andrew Bruce &lt;Practical Statistics for Data Science (출판사: 
   
   
   ### [CH 6. 통계적 머신러닝](https://rpubs.com/ameliachoi/PSDS-CH06)
+  
+  *상세 내용 포스팅 참고*
+  
+  - [Practical Statistics for Data Scientists 06_01 – 통계적 머신러닝 (1)](https://peeltheidea.space/statistics/statistics_for_ds/practical-statistics-for-data-scientists-06_01-%ed%86%b5%ea%b3%84%ec%a0%81-%eb%a8%b8%ec%8b%a0%eb%9f%ac%eb%8b%9d-1/)
+  
+  - [Practical Statistics for Data Scientists 06_01 – 통계적 머신러닝 (2)](https://peeltheidea.space/statistics/statistics_for_ds/practical-statistics-for-data-scientists-06_02-%ed%86%b5%ea%b3%84%ec%a0%81-%eb%a8%b8%ec%8b%a0%eb%9f%ac%eb%8b%9d-2/)
 
   
   ### [CH 7. 비지도 학습](https://rpubs.com/ameliachoi/PSDS-CH07)
+  
+  *상세 내용 포스팅 참고*
+  
+  - [Practical Statistics for Data Scientists 07_01 – 비지도 학습 (1)](https://peeltheidea.space/statistics/practical-statistics-for-data-scientists-07_01-%eb%b9%84%ec%a7%80%eb%8f%84-%ed%95%99%ec%8a%b5-1/)
+  
+  - [Practical Statistics for Data Scientists 07_02 – 비지도 학습 (2)](https://peeltheidea.space/statistics/practical-statistics-for-data-scientists-07_02-%eb%b9%84%ec%a7%80%eb%8f%84-%ed%95%99%ec%8a%b5-2/)
